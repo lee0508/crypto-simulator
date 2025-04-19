@@ -3,7 +3,7 @@ $mysqli = new mysqli("localhost", "root", "1234", "crypto_insight");
 if ($mysqli->connect_error) die("DB 연결 실패: " . $mysqli->connect_error);
 
 // 초기값
-$investment = 47000000;
+$investment = 30000000;
 $rate = 20;
 $btc_ratio = 42;
 $eth_ratio = 32;
