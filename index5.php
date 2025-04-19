@@ -45,8 +45,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
 
   <!-- fontawesome.js -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0-10/css/all.min.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0-10/js/all.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
   <style>
     body {
       padding: 2rem;
@@ -105,38 +105,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <!-- 여기부터 투자금 입력, 시뮬레이션 탭 구성 시작 -->
     <!-- 시뮬레이션 입력 폼 -->
-    <form id="simulationForm" class="mb-3">
-      <div class="form-group">
-        <!-- <label for="investment">투자금 (원):</label> -->
-        <label class="form-label">📥 투자금액 (₩)</label>
-        <input type="number" class="form-control" id="investment" name="investment" value="30000000" required>
+    <form id="simulationForm" class="card p-4 shadow-sm mb-4">
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label class="form-label"><i class="fas fa-pencil-alt"></i> 투자금액 (₩)</label>
+          <input type="number" name="investment" class="form-control" value="30000000" required>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label"><i class="fas fa-star-of-life"></i> 목표 수익률 (%)</label>
+          <input type="number" name="target_return" class="form-control" step="0.1" value="30" required>
+        </div>
       </div>
-      <div class="form-group mt-2">
-        <!-- <label for="target_return">목표 수익률 (%):</label> -->
-        <label class="form-label">🎯 목표 수익률 (%)</label>
-        <input type="number" class="form-control" id="target_return" name="target_return" value="30" required>
-      </div>
-      <div class="form-group mt-2">
-        <!-- <label>포트폴리오 비중 (%):</label> -->
-        <h5 class="mt-3">⚙️ 포트폴리오 비율 (%)</h5>
-        <!-- <div class="row">
-          <div class="col"><input type="number" class="form-control" name="btc" placeholder="BTC" value="50" required></div>
-          <div class="col"><input type="number" class="form-control" name="eth" placeholder="ETH" value="30" required></div>
-          <div class="col"><input type="number" class="form-control" name="alt" placeholder="Altcoins" value="20" required></div>
-        </div> -->
-        <div class="row mb-3">
-          <div class="col-md-4">
-            <label>BTC</label>
-            <input type="number" name="btc" class="form-control" value="50" required>
-          </div>
-          <div class="col-md-4">
-            <label>ETH</label>
-            <input type="number" name="eth" class="form-control" value="30" required>
-          </div>
-          <div class="col-md-4">
-            <label>USDT</label>
-            <input type="number" name="usdt" class="form-control" value="20" required>
-          </div>
+
+      <h5 class="mt-3"><i class="fas fa-cog"></i> 포트폴리오 비율 (%)</h5>
+      <div class="row mb-3">
+        <div class="col-md-4">
+          <label><i class="fab fa-btc"></i> BTC</label>
+          <input type="number" name="btc" class="form-control" value="50" required>
+        </div>
+        <div class="col-md-4">
+          <label><i class="fab fa-ethereum"></i> ETH</label>
+          <input type="number" name="eth" class="form-control" value="20" required>
+        </div>
+        <div class="col-md-4">
+          <label><i class="fab fa-watchman-monitoring"></i> ATC</label>
+          <input type="number" name="alt" class="form-control" value="30" required>
         </div>
       </div>
       <button type="submit" class="btn btn-primary mt-3">시뮬레이션 시작</button>

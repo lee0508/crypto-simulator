@@ -1,0 +1,55 @@
+
+
+portfolio ratio
+
+BTC, ETH, USDT, SOLA, ALTO
+
+CREATE TABLE simulation_log (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  amount INT,
+  profit INT,
+  btc INT,
+  eth INT,
+  usdt INT,
+  created_at DATETIME
+);
+
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    userid VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100),
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE investment_results (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  user_id VARCHAR(50),
+  investment INT,
+  target_profit INT,
+  profit INT,
+  total_value INT,
+  result_json TEXT,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+
+CREATE TABLE simulations (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id VARCHAR(50),
+    investment INT,
+    target_return FLOAT,
+    btc_ratio FLOAT,
+    eth_ratio FLOAT,
+    alt_ratio FLOAT,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+1. 목표 수익률 도달 시 매도
+2. 단계적 분할 매도
+3. 트레일링 스탑 손절
+4. 비중 조절형 리밸런싱
+5. 장기 보유용 + 단기 매매용 분리

@@ -40,7 +40,7 @@ echo "
       <ul>
         <li>BTC: " . number_format($btcAmount) . " 원</li>
         <li>ETH: " . number_format($ethAmount) . " 원</li>
-        <li>Altcoins: " . number_format($altAmount) . " 원</li>
+        <li>ATC: " . number_format($altAmount) . " 원</li>
       </ul>
     </li>
   </ul>
